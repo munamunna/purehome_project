@@ -1,38 +1,42 @@
 <app-header></app-header>
-<div class="home-wrapper">
-    
-    <nav class="middle-navbar  bg-white p-4 rounded shadow d-flex flex-column flex-md-row gap-4 align-items-center">
-      <a class="text-dark text-decoration-none fw-semibold" href="#">Enter Keyword here...</a>
-     <!-- Buy Dropdown -->
-    <div class="dropdown">
-        <a class="dropdown-toggle text-dark text-decoration-none fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Select Type
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">jkkk</a></li>
-          <li><a class="dropdown-item" href="#">Commercial</a></li>
-        </ul>
-      </div>
-  
-      <!-- Rent Dropdown -->
-      <div class="dropdown">
-        <a class="dropdown-toggle text-dark text-decoration-none fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Select Location
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Apartments</a></li>
-          <li><a class="dropdown-item" href="#">Offices</a></li>
-        </ul>
-      </div>
-      <a class="text-dark text-decoration-none fw-semibold" href="#">Enter Location</a>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search homes..." aria-label="Search">
-        <button class="btn btn-primary" type="submit">Search</button>
-      </form>
-    </nav>
 
-   
-   
-  </div>
- 
-  
+<div class="home-wrapper">
+  <form class="middle-navbar bg-white p-4 rounded shadow d-flex flex-column flex-md-row gap-3 align-items-center"
+        (ngSubmit)="onSearch()"
+        #searchForm="ngForm">
+    
+    <input type="text"
+           class="form-control"
+           placeholder="Enter keyword..."
+           [(ngModel)]="keyword"
+           name="keyword"
+           required>
+
+    <select class="form-select"
+            [(ngModel)]="selectedType"
+            name="type"
+            required>
+      <option value="" disabled selected>Select Type</option>
+      <option value="residential">Residential</option>
+      <option value="commercial">Commercial</option>
+    </select>
+
+    <select class="form-select"
+            [(ngModel)]="selectedLocation"
+            name="location"
+            required>
+      <option value="" disabled selected>Select Location</option>
+      <option value="apartments">Apartments</option>
+      <option value="offices">Offices</option>
+    </select>
+
+    <input type="text"
+           class="form-control"
+           placeholder="Enter Location..."
+           [(ngModel)]="locationText"
+           name="locationText"
+           required>
+
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+</div>
