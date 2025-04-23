@@ -1,15 +1,17 @@
 .home-wrapper {
     height: 100vh;
     width: 100%;
-    /* background-image: url('/assets/images/backroundimage.jpg'); */
+   
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
     display: flex;
+    flex-direction: column; /* So form & text stack vertically */
     align-items:center;
     justify-content: center;
     animation: slideshow 5s infinite;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
   }
 
   @keyframes slideshow {
@@ -19,8 +21,398 @@
     100% { background-image: url('/assets/images/image4.jpg'); }
   }
   
-  .middle-navbar {
-    margin-top: 300px;
+  .middle-form {
+    margin-top: 200px;
+    z-index: 2;
+  }
+  .below-text {
+    z-index: 2;
+  }
+
+  /* #######################section 2########################### */
+
+  .partners-section {
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 12px;
+    padding: 10rem 6rem;
+    margin-top: 4rem;
+  }
+  
+  .text-section {
+    max-width: 400px;
+  }
+  
+  .brand-logo {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .brand-logo:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1); /* Zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  }
+  
+  
+  
+  .text-section h4 {
+    white-space: nowrap;
+  }
+  
+  @media (max-width: 768px) {
+    .text-section h4 {
+      white-space: normal;
+    }
+  }
+   /* #######################section 2 END########################### */
+   
+  
+ /*######################## section 5 ############################  */
+ .hero-section {
+    background-image: url('/assets/images/sectionimage.png'); /* Replace with your actual path */
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    height: 70px;
+    
+    padding: 1px 15px; 
+    position: relative;
+    z-index: 1;
+    padding: 60px 15px;
+    background-size: contain;  /* or use cover for full-fill */
+    background-color: blue;
+  }
+  
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: -1;
+  }
+
+  
+  
+ /*######################## section 5 END  ############################  */
+
+ /*######################## section 7   ############################  */
+ .hero-banner {
+    background: url('/assets/images/bannerbg.jpg') center center/cover no-repeat;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .hero-banner .overlay {
+    background-color: rgba(0, 0, 0, 0.2); /* optional dark overlay */
+    z-index: 1;
+  }
+  
+  .hero-banner .container {
+    position: relative;
     z-index: 2;
   }
   
+  .cursive-text {
+    font-family: 'Great Vibes', cursive; /* You can use any cursive font */
+    color: white;
+  }
+  
+  /*######################## section 7 END  ############################  */ 
+  /*######################## section 8  ############################  */
+  .stats-section {
+    background-color: #062b53;
+  }
+  
+  .circle-stat {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #1b3e6f, #0a2a50);
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow:
+      0 0 0 10px rgba(255, 255, 255, 0.05),
+      0 0 0 20px rgba(255, 255, 255, 0.03),
+      0 0 0 30px rgba(255, 255, 255, 0.02);
+  }
+  .circle-stat {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .circle-stat:hover {
+    box-shadow:
+      0 0 15px 5px rgba(255, 255, 255, 0.2),
+      0 0 0 10px rgba(255, 255, 255, 0.05),
+      0 0 0 20px rgba(255, 255, 255, 0.03),
+      0 0 0 30px rgba(255, 255, 255, 0.02);
+    transform: scale(1.05);
+  }
+  
+  
+  .circle-stat h3 {
+    font-size: 1.5rem;
+  }
+  
+  .circle-stat p {
+    font-size: 0.9rem;
+  }
+
+
+  
+
+  @media (max-width: 576px) {
+    .circle-stat {
+      width: 120px;
+      height: 120px;
+      padding: 20px 5px;
+    }
+  
+    .circle-stat h3 {
+      font-size: 1.2rem;
+    }
+  
+    .circle-stat p {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /*######################## section 8 END  ############################  */ 
+
+    /*######################## section 9(testimonial)  ############################  */ 
+    .testimonial-section {
+        background-color: #f3f9f6;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .bg-title {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 72px;
+        font-family: 'Dancing Script', cursive;
+        color: rgba(0, 0, 0, 0.05);
+        z-index: 0;
+        user-select: none;
+      }
+      
+      .testimonial-box {
+        background-color: #fff;
+        border-radius: 12px;
+        max-width: 900px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 2;
+      }
+      
+      .stars {
+        letter-spacing: 4px;
+      }
+      
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        padding: 10px;
+      }
+      
+      
+    /*######################## section 9 END(testimonial)  ############################  */ 
+
+    /*######################## section 10 (Mortage calculator)  ############################  */ 
+   
+.breadcrumb-percent {
+  display: flex;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.breadcrumb-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transition: width 0.6s ease-in-out;
+}
+.output-box {
+  border-left: 4px solid #0d6efd;
+}
+
+.msection{
+    background-color: #0a2a50;
+    border-radius: 5%;
+    padding: 5%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+.mortgage-calculator-section{
+    background-color: #f3f9f6;
+}
+
+.line-track {
+    position: relative;
+    height: 8px;
+    background-color:green;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 8px;
+  }
+  
+  .progress-line {
+    position: absolute;
+    height: 8px;
+    background-color: #0d6efd;
+    border-radius: 4px;
+    top: 0;
+    left: 0;
+    transition: width 0.5s ease;
+  }
+  
+  .progress-circle {
+    position: absolute;
+    top: -14px; 
+    left: 25px;
+    transform: translateX(-50%);
+    background-color: #0d6efd;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 6px;
+    border-radius: 50%;
+    white-space: nowrap;
+    transition: left 0.5s ease;
+  }
+  .progress-circletwo {
+    position: absolute;
+    top: -14px; 
+    left: 40px;
+    transform: translateX(-50%);
+    background-color: #0d6efd;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 6px;
+    border-radius: 50%;
+    white-space: nowrap;
+    transition: left 0.5s ease;
+  }
+  .progress-circlethree {
+    position: absolute;
+    top: -14px; 
+    left: 430px;
+    transform: translateX(-50%);
+    background-color: #0d6efd;
+    color: #fff;
+    font-size: 12px;
+    padding: 12px 14px;
+    border-radius: 50%;
+    white-space: nowrap;
+    transition: left 0.5s ease;
+  }
+  
+  
+  .label-track {
+    font-size: 13px;
+    color: #6c757d;
+  }
+  .textclr{
+    color:#444444;
+  }
+  .input-group-text {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+  
+   /*######################## section 10 END(Mortage calculator)  ############################  */
+
+  /*######################## section 11 (Blog and POST)  ############################  */ 
+  
+ .blog .badge{
+    top: 160px;
+ }
+  
+  /*######################## section 11 END(Blog and POST)  ############################  */ 
+  
+  /*######################## section 12   ############################  */ 
+  .help-section{
+    background-color: #add8e6;
+  }
+   /*######################## section 12 END   ############################  */ 
+
+    /*######################## section 13 (banner)   ############################  */ 
+    .home-banner {
+      background: #00c29e;
+      border-radius: 20px;
+      margin: 40px auto 60px auto;
+      width: 90%;
+      max-width: 1200px;
+      margin-top: -100px;
+      z-index: 2;
+      position: relative;
+      padding: 30px 40px;
+      text-align: center;
+      color: #fff;
+    }
+    
+    .footer-section {
+      background-color: #051c34;
+      margin-top: -100px;
+      position: relative;
+      z-index: 1;
+      padding: 40px 20px;
+    }
+    
+    .footer-section h5 {
+      color: white;
+      margin-bottom: 20px;
+    }
+    
+    .footer-section p,
+    .footer-section a {
+      font-size: 14px;
+      color: #ccc;
+      text-decoration: none;
+    }
+    
+    .footer-section a:hover {
+      color: #fff;
+    }
+    
+    
+    @media (max-width: 768px) {
+      .home-banner {
+        padding: 20px 15px;
+        font-size: 16px;
+        margin-top: -40px;
+      }
+    
+      .footer-section {
+        text-align: center;
+        padding: 30px 15px;
+      }
+    
+      .footer-section h5 {
+        font-size: 18px;
+      }
+    
+      .footer-section p,
+      .footer-section a {
+        font-size: 13px;
+      }
+    }
+    
+    
+    
+    /*######################## section 13 END   ############################  */ 
